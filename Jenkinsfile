@@ -12,8 +12,9 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
-		#mkdir myapp
-                #cd myapp
+		mkdir myapp
+		mv helloworld.py myapp
+                cd myapp
                 #pip install -r requirements.txt
 		pwd
                 '''
@@ -23,7 +24,7 @@ pipeline {
             steps {
                 echo "Testing.."
                 sh '''
-                #cd myapp
+                cd myapp
                 python3 helloworld.py
                 python3 helloworld.py --name=Fernan
                 '''
